@@ -1,4 +1,3 @@
-{/*
 import React from 'react'
 
 function Article(props){
@@ -24,4 +23,3 @@ function hendleClick(){
 }
 
 export default Article
-*/}
