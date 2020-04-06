@@ -1,4 +1,4 @@
-{/*
+
 import React from 'react'
 
 function Article(props){
@@ -6,8 +6,8 @@ function Article(props){
 	console.log('---', props)
   	const body =<section>{article.text}</section>
 	return(
-    	<div className='hello' style ={{color: 'red'}}>
-        	<h2>
+    	<div >
+        	<h2 className='hello' style ={{color: 'red'}}>
 				{article.title}
 				<button onClick={hendleClick}>close</button>
 			</h2>
@@ -24,4 +24,3 @@ function hendleClick(){
 }
 
 export default Article
-*/}
