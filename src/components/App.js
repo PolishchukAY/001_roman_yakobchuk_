@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Article from './Article'
+import ArticleList from './ArticleList'
 import articles from '../fixtures'
 
 function App(){
@@ -8,7 +8,7 @@ function App(){
     	<div>
       		<div></div>
         	<h1>App Name</h1>
-        	<Article article={articles[0]} foo={'bar'} flag/>
+        	<ArticleList articles={articles} foo={'bar'} flag/>
       	</div>
     )
 }
