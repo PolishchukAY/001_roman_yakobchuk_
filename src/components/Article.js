@@ -1,26 +1,37 @@
 
-import React from 'react'
+import React, {Component} from 'react'
 
-function Article(props){
-	const {article}=props
-	console.log('---', props)
-  	const body =<section>{article.text}</section>
-	return(
-    	<div >
-        	<h2 className='hello' style ={{color: 'red'}}>
-				{article.title}
-				<button onClick={hendleClick}>close</button>
-			</h2>
-        	{body}
-        `	<h3>
-        		creation date: {(new Date(article.date)).toDateString()}
-        	</h3>
-      	</div>
-    )
+class Article extends Component {
+	state={
+		isOpen: true
+	}
+
+	render(){
+		const {article}=this.props
+		console.log('--- this.props', this.props)
+		const body = this.state.isOpen && <section>{article.text}</section>
+		return(
+			<div >
+				<h2 className='hello' style ={{color: 'red'}}>
+					{article.title}
+					<button onClick={this.handleClick}>
+						{this.state.isOpen ? 'close' : 'open'}
+					</button>
+				</h2>
+				{body}
+			`	<h3>
+					creation date: {(new Date(article.date)).toDateString()}
+				</h3>
+			</div>
+		)
+	}
+	handleClick = () => {
+		console.log('---', 'cliced')
+		this.setState({
+			isOpen: !this.state.isOpen
+		})
+	}
 }
 
-function hendleClick(){
-	console.log('---', 'cliced')	
-}
 
 export default Article
