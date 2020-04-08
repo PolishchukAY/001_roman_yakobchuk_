@@ -2,8 +2,12 @@
 import React, {Component} from 'react'
 
 class Article extends Component {
-	state={
-		isOpen: true
+	state = {
+		isOpen: this.props.defaultOpen //true
+	}
+
+	componentWillMount(){
+		console.log('---', 'componentWillMount')
 	}
 
 	render(){
