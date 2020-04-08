@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react'
+import React, {Component, PureComponent} from 'react'
 
 class Article extends Component {
 	constructor (props) {
@@ -9,10 +9,11 @@ class Article extends Component {
 			count: 0
 		}
 	}
-
+/*
 	shouldComponentUpdate(nextProps, nextState) {
 		return this.state.isOpen !== nextState.isOpen
 	}
+*/
 
 	componentWillMount() {
 		console.log('---', 'ct_WillMount')
