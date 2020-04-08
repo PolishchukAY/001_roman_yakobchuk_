@@ -2,17 +2,31 @@
 import React, {Component} from 'react'
 
 class Article extends Component {
-	state = {
-		isOpen: this.props.defaultOpen //true
+	constructor (props) {
+		super(props)
+		this.state = {
+			isOpen: props.defaultOpen
+		}
 	}
 
 	componentWillMount(){
-		console.log('---', 'componentWillMount')
+		console.log('---', 'ct_WillMount')
+	}
+
+	componentWillReceiveProps(nextProps){
+		console.log('---', 'ct_WillReceiveProps')
+		if (nextProps.defaultOpen !== this.props.defaultOpen) this.setState({
+			isOpen: nextProps.defaultOpen
+		})
+	}
+
+	componentWillUpdate(nextProps, nextState, nextContext) {
+		console.log('---', 'ct_WillUpdate')
 	}
 
 	render(){
 		const {article}=this.props
-		console.log('--- this.props', this.props)
+		//console.log('--- this.props', this.props)
 		const body = this.state.isOpen && <section className={"card-text"}>{article.text}</section>
 		return(
 			<div className={"card mx-auto"} style={{width:"70%"}}>
