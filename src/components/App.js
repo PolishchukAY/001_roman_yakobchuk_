@@ -8,10 +8,21 @@ class App extends Component{
 	state = {
 		reverted: false
 	}
-	revert = () => this.setState({
-		reverted: !this.state.reverted
-	})
+
+	revert = () =>{
+		console.log('---', '1---revert')
+		this.setState({
+			reverted: !this.state.reverted
+		})
+	}
+
+
+
+
+
 	render(){
+		const articlesList = this.state.reverted ? articles.reverse(): articles
+		console.log('---', '2---render', this.state, articles.map(article=>article.id))
 		return(
 			<div className="container">
 				<div className={"jumbotron"}>
@@ -22,7 +33,7 @@ class App extends Component{
 						</button>
 					</h1>
 				</div>
-				<ArticleList articles={this.state.reverted? articles.reverse(): articles}/>
+				<ArticleList articles={articlesList}/>
 			</div>
 		)
 	}
