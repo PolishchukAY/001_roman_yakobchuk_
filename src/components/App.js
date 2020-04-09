@@ -8,16 +8,8 @@ class App extends PureComponent{
 	state = {
 		reverted: false
 	}
+	//articles = articles.slice()
 
-	revert = () =>{
-		console.log('---', '1---revert')
-		this.articles.reverse()
-		this.setState({
-			reverted: !this.state.reverted
-		})
-	}
-
-	articles = articles.slice()
 	render(){
 		/*const articlesList = this.state.reverted ? articles.reverse(): articles
 		console.log('---', '2---render', this.state, articles.map(article=>article.id))*/
@@ -36,6 +28,14 @@ class App extends PureComponent{
 			</div>
 		)
 	}
+
+    revert = () =>{
+        console.log('---', '1---App.revert')
+        //this.articles.reverse()
+        this.setState({
+            reverted: !this.state.reverted
+        })
+    }
 }
 
 export default App
