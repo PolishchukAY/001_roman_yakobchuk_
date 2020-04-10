@@ -16,7 +16,7 @@ class Article extends PureComponent {
 */
 	render(){
 		console.log('--- this.props', this.props)
-		const {article, isOpen} = this.props
+		const {article, isOpen, onButtonClick} = this.props
 		const body = isOpen && <section className={"card-text"}>{article.text}</section>
 		return(
 			<div className={"card mx-auto"} style={{width:"70%"}}>
@@ -25,7 +25,7 @@ class Article extends PureComponent {
 						className='hello' style ={{color: 'red'}}>
 						{article.title}
 						clicked{this.state.count}
-						<button onClick={this.handleClick} className={"btn btn-primary btn-lg float-right"}>
+						<button onClick={onButtonClick} className={"btn btn-primary btn-lg float-right"}>
 							{isOpen ? 'close' : 'open'}
 						</button>
 					</h2>
@@ -58,13 +58,13 @@ class Article extends PureComponent {
 		this.setState({
 			count: this.state.count + 1})
 	}
-
+/*
 	handleClick = () => {
 		//console.log('---', 'cliced')
-		/*this.setState({
+		this.setState({
 			isOpen: !this.state.isOpen
-		})*/
-	}
+		})
+	}*/
 }
 
 
